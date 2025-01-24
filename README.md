@@ -1,5 +1,4 @@
 <h2 align="center">Mediakeep</h2>
-<hr>
 
 **Figma** : [link](https://www.figma.com/design/wIIixeDOx7AmwlZ0KFcmjR/MediaKeep-Design?node-id=0-1&t=vSWrL8pHb1zc41e6-1)
 
