@@ -1,4 +1,4 @@
-<center> <h2>MediaKeep</h2> </center>
+<h2 align="center">Mediakeep</h2>
 
 ***
 
