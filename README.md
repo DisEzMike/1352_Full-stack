@@ -8,7 +8,7 @@
 
 for Front-end :
 ```shell
-cd frontend \
-yarn \
+cd frontend 
+yarn 
 yarn start
 ```
