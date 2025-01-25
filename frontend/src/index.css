@@ -1,4 +1,6 @@
+@import url('./components/variables.css');
+
 :root {
-  --default-font-family: "Poppins";
   font-family: var(--default-font-family);
+  color: black;
 }
