@@ -1,19 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faCloudUpload } from "@fortawesome/free-solid-svg-icons"
 import React from "react";
+
+import './nav.css'
+
 export default function Navbar() {
   return (
     <nav>
       <span className="media-keep">MEDIA KEEP</span>
       <div className="actions">
         <div className="home">
-          {/* <div className="home-1" />  */}
           <FontAwesomeIcon icon={faHouse} />
-          <span className="page-home">หน้าแรก</span>
+          <span>หน้าแรก</span>
         </div>
         <div className="upload">
         <FontAwesomeIcon icon={faCloudUpload} />
-          <span className="span-upload">อัพโหลด</span>
+          <span>อัพโหลด</span>
         </div>
       </div>
     </nav>
