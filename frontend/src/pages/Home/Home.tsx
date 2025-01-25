@@ -20,8 +20,8 @@ export default class Home extends Component {
 							ไม่จำกัดจำนวน ไม่มีวันหมดอายุตลอดการใช้งาน ฟรี!
 						</span>
 						<div>
-							<Button className="btn" variant="solid">
-								<FontAwesomeIcon icon={faCloudUpload} />{' '}
+							<Button className="btn" colorPalette="teal" variant="solid">
+								<FontAwesomeIcon icon={faCloudUpload} />
 								อัพโหลดเลย
 							</Button>
 						</div>
