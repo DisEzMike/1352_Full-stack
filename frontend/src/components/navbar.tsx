@@ -3,19 +3,20 @@ import { faHouse, faCloudUpload } from "@fortawesome/free-solid-svg-icons"
 import React from "react";
 
 import './nav.css'
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <nav>
-      <span className="media-keep">MEDIA KEEP</span>
+      <Link className="logo" to="/">MEDIA KEEP</Link>
       <div className="actions">
-        <div className="home">
+        <div>
           <FontAwesomeIcon icon={faHouse} />
-          <span>หน้าแรก</span>
+          <Link to="/">หน้าแรก</Link>
         </div>
-        <div className="upload">
+        <div>
         <FontAwesomeIcon icon={faCloudUpload} />
-          <span>อัพโหลด</span>
+          <Link to="/upload">อัพโหลด</Link>
         </div>
       </div>
     </nav>
