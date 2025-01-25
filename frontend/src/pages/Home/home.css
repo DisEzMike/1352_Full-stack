@@ -1,0 +1,59 @@
+@import '../../components/variables.css';
+
+* {
+	margin: 0 !important;
+	font-family: 'Poppins';
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 80vh;
+}
+
+.background {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: url('../../../assets/img/Pool2-NIZUC-Mexico-CRHotel-1-1.png')
+		no-repeat center;
+	background-size: cover;
+	filter: blur(5.5px);
+	z-index: -1;
+}
+
+.slogan {
+	& :nth-child(1) {
+		font-size: 40px;
+		font-weight: 900;
+	}
+
+	height: 100%;
+
+	color: var(--base);
+	font-size: 25px;
+	font-weight: 400;
+
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	text-align: center;
+}
+
+.btn {
+	margin-top: 10px !important;
+	background-color: var(--primary);
+	width: 35%;
+	height: 60px;
+	color: var(--base);
+	font-size: 25px !important;
+	font-weight: 400 !important;
+	gap: 10px;
+}
+
+.btn:hover {
+	background-color: #2972B6;
+}
