@@ -6,7 +6,7 @@
 
 ***
 
-for Front-end :
+Front-end :
 ```shell
 cd frontend 
 yarn 
