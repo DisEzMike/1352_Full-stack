@@ -5,6 +5,8 @@ import React from "react";
 import './nav.css'
 import { Link } from "react-router-dom";
 
+import UploadDialog from "./dialog";
+
 export default function Navbar() {
   return (
     <nav>
@@ -15,8 +17,9 @@ export default function Navbar() {
           <Link to="/">หน้าแรก</Link>
         </div>
         <div>
-        <FontAwesomeIcon icon={faCloudUpload} />
-          <Link to="/upload">อัพโหลด</Link>
+        {/* <FontAwesomeIcon icon={faCloudUpload} />
+          <Link to="/upload">อัพโหลด</Link> */}
+          {UploadDialog("อัพโหลด")}
         </div>
       </div>
     </nav>

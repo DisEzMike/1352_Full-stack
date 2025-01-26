@@ -8,6 +8,10 @@ import '@fontsource/poppins';
 import { Provider } from './components/ui/provider';
 import { BrowserRouter } from 'react-router-dom';
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
