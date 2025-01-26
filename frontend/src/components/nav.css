@@ -46,45 +46,6 @@ nav {
 	white-space: nowrap;
 }
 
-.btn0 {
-	display: flex;
-	align-items: center;
-	flex-wrap: nowrap;
-	flex-shrink: 0;
-	gap: 10px;
-}
-
-.svg {
-	width: 18 !important;
-	height: 16 !important;
-}
-
-.btn0 > span {
-	flex-shrink: 0;
-	flex-basis: auto;
-	position: relative;
-	color: var(--black);
-	font-family: Poppins;
-	font-size: 16px !important;
-	font-weight: 400;
-	line-height: 30px;
-	text-align: left;
-	white-space: nowrap;
-}
-
-.btn0 > span {
-	flex-shrink: 0;
-	flex-basis: auto;
-	position: relative;
-	color: var(--black);
-	font-family: Poppins;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 30px;
-	text-align: left;
-	white-space: nowrap;
-}
-
 .logo {
 	flex-shrink: 0;
 	flex-basis: auto;
