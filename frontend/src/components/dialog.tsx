@@ -81,7 +81,7 @@ export default function UploadDialog(text: string, type = 0) {
 							</Flex>
 							<br />
 							<SelectRoot collection={frameworks} size="sm" width="300px">
-								<SelectLabel>Select framework</SelectLabel>
+								<SelectLabel>Auto Delete</SelectLabel>
 								<SelectTrigger>
 									<SelectValueText placeholder="Select movie" />
 								</SelectTrigger>
