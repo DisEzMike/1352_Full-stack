@@ -1,11 +1,26 @@
 @import '../../assets/variables.css';
 
+.carousel .slider-wrapper.axis-horizontal .slider {
+    height: 50vh !important;
+}
+
+.slide {
+    background-color: var(--secondary);
+}
+
+.slide img {
+    width: auto !important;
+    height: 100%;
+}
+
 .file {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50vh;
     background-color: var(--secondary);
+
+    margin-bottom: 60px !important;
 }
 
 .file img {

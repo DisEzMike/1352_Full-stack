@@ -10,16 +10,19 @@ import React, { Component } from 'react'
 import "./view.css"
 
 import _img from "../../assets/img/urban-vintage-78A265wPiO4-unsplash1.jpg"
-import { Center, Container, Flex, Group } from "@chakra-ui/react"
-
+import { Box, Center, Container, Flex, Group, Image } from "@chakra-ui/react"
+import ImageSlider from "../../components/ImageSlider"
+import { SlideData } from "../../components/slideData"
 
 export default class View extends Component {
   render() {
     return (
       <>
-        <div className='file'>
-          <img src={_img} alt="img" />
-        </div>
+        <Box w="100%" h="50vh" className="file">
+          
+            <ImageSlider slides={SlideData} />
+
+        </Box>
         <Center>
           <div className='container'>
             <Flex className='detail' justifyContent="space-between">
