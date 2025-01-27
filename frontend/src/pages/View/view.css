@@ -1,5 +1,9 @@
 @import '../../assets/variables.css';
 
+html {
+    overflow: hidden;
+}
+
 .carousel .slider-wrapper.axis-horizontal .slider {
     height: 50vh !important;
 }

@@ -10,9 +10,11 @@ import React, { Component } from 'react'
 import "./view.css"
 
 import _img from "../../assets/img/urban-vintage-78A265wPiO4-unsplash1.jpg"
-import { Box, Center, Container, Flex, Group, Image } from "@chakra-ui/react"
+import { Box, Button, Center, Container, Flex, Group, Image } from "@chakra-ui/react"
 import ImageSlider from "../../components/ImageSlider"
 import { SlideData } from "../../components/slideData"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDownload, faImage } from "@fortawesome/free-solid-svg-icons"
 
 export default class View extends Component {
   render() {
@@ -29,9 +31,14 @@ export default class View extends Component {
               <Flex direction="column">
                 <div><span>pic's name</span> - 10/10/24</div>
                 <br />
-                <div>fasfsdsa</div>
+                <div><FontAwesomeIcon icon={faImage} />  640 x 480 - JPG 102.6 KB</div>
               </Flex>
-              <div>1</div>
+              <div>
+                <Button className='resetbtn' variant="subtle">
+                  <FontAwesomeIcon icon={faDownload} />
+                  ดาวน์โหลด
+                </Button>
+              </div>
             </Flex>
             <br />
             <hr className='thick' />
