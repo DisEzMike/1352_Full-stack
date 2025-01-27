@@ -1,7 +1,11 @@
 :root {
 	--default-font-family: 'Poppins';
-
-	--primary: #3182ce;
+	
 	--base: #ffffff;
     --black: #111111;
+	
+	--primary: #3182ce;
+	--secondary: #777777;
+	--third: #dddddd;
+	--danger: #CE3134;
 }

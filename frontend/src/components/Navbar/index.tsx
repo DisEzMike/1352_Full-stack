@@ -21,6 +21,10 @@ export default function Navbar() {
           <Link to="/upload">อัพโหลด</Link> */}
           {UploadDialog("อัพโหลด")}
         </div>
+        <div>
+          <FontAwesomeIcon icon={faHouse} />
+          <Link to="/view">view</Link>
+        </div>
       </div>
     </nav>
   );
