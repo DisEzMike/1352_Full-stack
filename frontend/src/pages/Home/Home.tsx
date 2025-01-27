@@ -9,7 +9,8 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div className="main">
-				<div className="background" />
+				<div className="bg" />
+				<div className="bg1" />
 				<Center>
 					<Flex className="slogan" direction="column">
 						<span>ฝากรูป วิดีโอ อัพโหลดฟรี</span>
