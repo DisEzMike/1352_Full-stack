@@ -5,7 +5,7 @@ import {
 	DialogHeader,
 	DialogRoot,
 	DialogTrigger,
-} from './ui/dialog';
+} from '../ui/dialog';
 
 import { faCloudUpload, faRedo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,11 +29,11 @@ import {
 } from '@chakra-ui/react';
 import React, { Component } from 'react';
 
-import upload from '../assets/img/Pool2-NIZUC-Mexico-CRHotel-1-1.png';
+import upload from '../../assets/img/Pool2-NIZUC-Mexico-CRHotel-1-1.png';
 
 import './dialog.css';
-import { Field } from './ui/field';
-import { Checkbox } from './ui/checkbox';
+import { Field } from '../ui/field';
+import { Checkbox } from '../ui/checkbox';
 
 export default function UploadDialog(text: string, type = 0) {
 	let files = ['dd','d','dd','a'];

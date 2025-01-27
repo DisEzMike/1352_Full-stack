@@ -5,7 +5,7 @@ import React from "react";
 import './nav.css'
 import { Link } from "react-router-dom";
 
-import UploadDialog from "./dialog";
+import UploadDialog from "../Dialog";
 
 export default function Navbar() {
   return (

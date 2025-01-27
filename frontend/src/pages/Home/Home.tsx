@@ -3,7 +3,7 @@ import './home.css';
 import { Button, Center, Container, Flex, HStack } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUpload } from '@fortawesome/free-solid-svg-icons';
-import UploadDialog from '../../components/dialog';
+import UploadDialog from '../../components/Dialog';
 
 export default class Home extends Component {
 	render() {
