@@ -50,11 +50,11 @@ hr.thick {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 80px !important;
+    padding: 40px !important;
 }
 
 .link-group {
-    margin-bottom: 50px !important;
+    margin-bottom: 30px !important;
     justify-content: center !important;
 }
 
