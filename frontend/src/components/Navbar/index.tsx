@@ -23,7 +23,7 @@ export default function Navbar() {
         </div>
         <div>
           <FontAwesomeIcon icon={faHouse} />
-          <Link to="/view">view</Link>
+          <Link to="/admin">admin</Link>
         </div>
       </div>
     </nav>

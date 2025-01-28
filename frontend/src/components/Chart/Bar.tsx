@@ -19,7 +19,7 @@ Chart.register(
 	Legend
 );
 
-export const BarChart = (data: ChartData<'bar'>) => {
+export const BarChart = (data: any) => {
     const option = {};
 
 	return <Bar options={option} data={data} />;
