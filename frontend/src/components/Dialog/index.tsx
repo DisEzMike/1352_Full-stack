@@ -44,6 +44,7 @@ export default function UploadDialog(text: string, type = 0) {
 					className={type == 1 ? 'btn' : 'btn0'}
 					variant="plain"
 					color="black"
+					w={{mdDown: "50% !important"}}
 				>
 					<FontAwesomeIcon icon={faCloudUpload} size="2xl" />
 					<span>{text}</span>
