@@ -1,0 +1,7 @@
+html {
+    background-color: var(--third);
+}
+
+.canvas-container {
+    height: 60vh;
+  }

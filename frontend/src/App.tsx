@@ -1,8 +1,9 @@
 import React from 'react';
-import Navbar from './components/navbar';
-import Home from './pages/Home/Home';
+import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Admin from './pages/Admin/Admin';
+import View from './pages/View/View';
+import { Home } from './pages/Home/Home';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" Component={Home} />
-				<Route path='/admin' Component={Admin} />
+				<Route path="/view" Component={View} />
+				<Route path='/dashboard' Component={Admin} />
 			</Routes>
 		</>
 	);

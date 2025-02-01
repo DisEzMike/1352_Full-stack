@@ -1,6 +1,9 @@
-@import url('./components/variables.css');
+@import url('./assets/variables.css');
 
 :root {
   font-family: var(--default-font-family);
-  color: black;
+}
+
+.container {
+  width: 90%;
 }
