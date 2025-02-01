@@ -4,6 +4,11 @@
 
 **Website** : [link](https://mediakeep.mikenatcavon.com)
 
+**Routes**
+`/` Home page
+`/view` View page
+`/dashboard` Admin page
+
 ***
 
 Front-end :
