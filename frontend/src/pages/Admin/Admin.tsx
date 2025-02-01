@@ -1,5 +1,14 @@
-import { Box, Button, Card, Container, Flex, Grid, GridItem, Table } from '@chakra-ui/react';
-import React, { Component, useState } from 'react';
+import {
+	Box,
+	Button,
+	Card,
+	Container,
+	Flex,
+	Grid,
+	GridItem,
+	Table,
+} from '@chakra-ui/react';
+import { useState } from 'react';
 
 import './admin.css';
 import { TotalCard } from '../../components/TotalCard';
@@ -7,7 +16,7 @@ import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 import { Bar, Pie } from 'react-chartjs-2';
 import {
-  faExternalLinkAlt,
+	faExternalLinkAlt,
 	faImage,
 	faPhotoVideo,
 	faTrashAlt,
@@ -55,7 +64,12 @@ export default function Admin() {
 		>
 			<Container>
 				<br />
-				<Flex gap={4} alignItems="center" justifyContent="center">
+				<Flex
+					gap={4}
+					alignItems="center"
+					justifyContent="center"
+					direction={{ mdDown: 'column' }}
+				>
 					<TotalCard title="รูปวันนี้" amount={100} Icon={faImage} />
 					<TotalCard
 						title="วิดีโอวันนี้"
@@ -69,7 +83,12 @@ export default function Admin() {
 					/>
 				</Flex>
 				<br />
-				<Flex gap={4} alignItems="center" justifyContent="center">
+				<Flex
+					gap={4}
+					alignItems="center"
+					justifyContent="center"
+					direction={{ mdDown: 'column' }}
+				>
 					<Card.Root w="100%" h="300px">
 						<Card.Body>
 							<h2 style={{ textAlign: 'center' }}>
@@ -127,18 +146,30 @@ export default function Admin() {
 					</Box>
 				</Flex>
 				<br />
-				<Table.Root size="sm" variant="line">
-					<Table.Header>
-						<Table.Row>
-							<Table.ColumnHeader textAlign="center">ที่</Table.ColumnHeader>
-							<Table.ColumnHeader>ชื่อ</Table.ColumnHeader>
-							<Table.ColumnHeader>วันที่อัพโหลด</Table.ColumnHeader>
-							<Table.ColumnHeader>วันที่ลบ</Table.ColumnHeader>
-							<Table.ColumnHeader w="200px" textAlign="center">จัดการ</Table.ColumnHeader>
-						</Table.Row>
-					</Table.Header>
-					<Table.Body>
-						{/* {items.map((item) => (
+				<Table.ScrollArea borderWidth="1px" maxW="xl">
+					<Table.Root size="sm" variant="line" w="100%">
+						<Table.Header>
+							<Table.Row>
+								<Table.ColumnHeader textAlign="center">
+									ที่
+								</Table.ColumnHeader>
+								<Table.ColumnHeader>ชื่อ</Table.ColumnHeader>
+								<Table.ColumnHeader>
+									วันที่อัพโหลด
+								</Table.ColumnHeader>
+								<Table.ColumnHeader>
+									วันที่ลบ
+								</Table.ColumnHeader>
+								<Table.ColumnHeader
+									w="200px"
+									textAlign="center"
+								>
+									จัดการ
+								</Table.ColumnHeader>
+							</Table.Row>
+						</Table.Header>
+						<Table.Body>
+							{/* {items.map((item) => (
 							<Table.Row key={item.id}>
 								<Table.Cell>{item.name}</Table.Cell>
 								<Table.Cell>{item.category}</Table.Cell>
@@ -147,27 +178,31 @@ export default function Admin() {
 								</Table.Cell>
 							</Table.Row>
 						))} */}
-            <Table.Row>
-              <Table.Cell textAlign="center">1</Table.Cell>
-              <Table.Cell>afsdfasdfadsf.jpg</Table.Cell>
-              <Table.Cell>1/1/25</Table.Cell>
-              <Table.Cell>10/10/25</Table.Cell>
-              <Table.Cell>
-                <Flex justifyContent="center" gap="10px">
-                  <Button bg={"var(--primary)"}>
-                    <FontAwesomeIcon icon={faExternalLinkAlt} />
-                    <span>เปิด</span>
-                  </Button>
-                  <Button bg={"var(--danger)"}>
-                  <FontAwesomeIcon icon={faTrashAlt} />
-                    <span>ลบ</span>
-                  </Button>
-                </Flex>
-              </Table.Cell>
-            </Table.Row>
-
-					</Table.Body>
-				</Table.Root>
+							<Table.Row>
+								<Table.Cell textAlign="center">1</Table.Cell>
+								<Table.Cell>afsdfasdfadsf.jpg</Table.Cell>
+								<Table.Cell>1/1/25</Table.Cell>
+								<Table.Cell>10/10/25</Table.Cell>
+								<Table.Cell>
+									<Flex justifyContent="center" gap="10px">
+										<Button bg={'var(--primary)'}>
+											<FontAwesomeIcon
+												icon={faExternalLinkAlt}
+											/>
+											<span>เปิด</span>
+										</Button>
+										<Button bg={'var(--danger)'}>
+											<FontAwesomeIcon
+												icon={faTrashAlt}
+											/>
+											<span>ลบ</span>
+										</Button>
+									</Flex>
+								</Table.Cell>
+							</Table.Row>
+						</Table.Body>
+					</Table.Root>
+				</Table.ScrollArea>
 			</Container>
 		</Box>
 	);
