@@ -25,6 +25,7 @@
 	flex-wrap: nowrap;
 	flex-shrink: 0;
 	gap: 10px;
+	padding: 0;
 }
 
 .svg {
