@@ -47,16 +47,18 @@ import {
 	FileUploadRoot,
 } from '../ui/file-upload';
 import { Controller, Form, useForm } from 'react-hook-form';
-import { object, z } from "zod"
+import { object, z } from 'zod';
+import axios from 'axios';
 
 const formSchema = z.object({
-  autoDel: z.string({ message: "Auto Delete is required" }).array(),
-})
+	autoDel: z.string({ message: 'Auto Delete is required' }).array(),
+});
 
-type FormValues = z.infer<typeof formSchema>
+type FormValues = z.infer<typeof formSchema>;
 
 export default function UploadDialog(text: string, type = 0) {
 	const [files, setFiles] = useState([] as File[]);
+	const [progress, setProgress] = useState(0);
 	const removeFile = (index: number) =>
 		setFiles([...files.slice(0, index), ...files.slice(index + 1)]);
 
@@ -70,13 +72,19 @@ export default function UploadDialog(text: string, type = 0) {
 	const onSubmitHandle = handleSubmit((data) => {
 		const formData = new FormData();
 
-		files.map((file) => formData.append("files[]", file));
-		
-		const autoDel = !!data.autoDel ? data.autoDel[0] : "none";
+		files.map((file, i) => formData.append(`file`, file));
 
-		formData.append("autoDel", autoDel);
+		const autoDel = !!data.autoDel ? data.autoDel[0] : 'none';
 
-		
+		formData.append('autoDel', autoDel);
+
+		console.log(Object.fromEntries(formData));
+
+		axios({
+			method: "POST",
+			url: "http://localhost:8080/api/upload",
+			data: formData,
+		}).then((res) => console.log(res)).catch(e => console.error)
 	});
 
 	return (
@@ -210,14 +218,16 @@ export default function UploadDialog(text: string, type = 0) {
 								<Button
 									className="btn1"
 									variant="plain"
-									w={{ mdDown: '50%' }}
+									w="50%"
 									type="submit"
 								>
 									<FontAwesomeIcon icon={faCloudUpload} />
 									อัพโหลด
 								</Button>
+								
 							</Container>
 						</form>
+						
 					)}
 				</DialogBody>
 			</DialogContent>
@@ -227,7 +237,7 @@ export default function UploadDialog(text: string, type = 0) {
 
 const data = createListCollection({
 	items: [
-		{ label: 'ไม่ลบ', value: 'none'},
+		{ label: 'ไม่ลบ', value: 'none' },
 		{ label: '1 วัน', value: '1 day' },
 		{ label: '3 วัน', value: '3 days' },
 		{ label: '7 วัน', value: '7 days' },
