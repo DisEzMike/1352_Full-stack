@@ -19,4 +19,6 @@ const upload = multer({ storage:storage });
 
 router.post("/upload", upload.array("file"), apiController.upload);
 
+router.get("/:id", apiController.getAlbum);
+
 export default router

@@ -50,3 +50,20 @@ export const upload = async (req: Request, res: Response) => {
         res.status(500).json({message: (e as Error).message});
     }
 }
+
+export const getAlbum = async (req: Request, res: Response) => {
+    const albumId = req.params.id;
+
+    try {
+        const db = await conn;
+
+        let sql = "SELECT dataNo, name, path, type, `albums`.albumNo FROM `datas` JOIN `albums` ON `datas`.albumNo=`albums`.id WHERE `albums`.albumNo=?";
+        let value = [albumId]
+
+        let [result, fields] = await db.execute(sql, value);
+
+        res.json({data: result});
+    } catch (e) {
+        console.log(e)
+    }
+}
