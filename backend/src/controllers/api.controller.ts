@@ -37,8 +37,8 @@ export const upload = async (req: Request, res: Response) => {
                 
                 result = result as ResultSetHeader;
                 const dataNo = shortid.generate();
-                sql = "INSERT INTO `datas` (`dataNo`, `name`, `size`, `path`, `albumNo`) VALUES(?,?,?,?,?);";
-                value = [dataNo, file.filename, file.size, file.path, result.insertId];
+                sql = "INSERT INTO `datas` (`dataNo`, `name`, `size`, `path`, `type`, `albumNo`) VALUES(?,?,?,?,?,?);";
+                value = [dataNo, file.filename, file.size, file.path, file.mimetype, result.insertId];
                 [result, fields] = await db.execute(sql, value);
             })
         }
