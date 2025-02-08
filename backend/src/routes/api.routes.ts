@@ -21,4 +21,8 @@ router.post("/upload", upload.array("file"), apiController.upload);
 
 router.get("/:id", apiController.getAlbum);
 
+router.get("/all", apiController.getAll);
+
+router.get("/all/:date", apiController.getAllWithDate);
+
 export default router

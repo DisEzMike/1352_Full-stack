@@ -67,3 +67,7 @@ export const getAlbum = async (req: Request, res: Response) => {
         console.log(e)
     }
 }
+
+export const getAll = async (req: Request, res: Response) => {}
+
+export const getAllWithDate = async (req: Request, res: Response) => {}
