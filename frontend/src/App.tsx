@@ -12,7 +12,7 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" Component={Home} />
-				<Route path="/view" Component={View} />
+				<Route path="/view/:id" Component={View} />
 				<Route path='/dashboard' Component={Admin} />
 			</Routes>
 		</>
