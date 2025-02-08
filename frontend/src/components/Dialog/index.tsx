@@ -275,12 +275,10 @@ export default function UploadDialog(text: string, type = 0) {
 const data = createListCollection({
 	items: [
 		{ label: 'ไม่ลบ', value: 'none' },
-		{ label: '1 วัน', value: '1 day' },
-		{ label: '3 วัน', value: '3 days' },
-		{ label: '7 วัน', value: '7 days' },
-		{ label: '1 เดือน', value: '1 month' },
-		{ label: '3 เดือน', value: '3 months' },
-		{ label: '6 เดือน', value: '5 months' },
-		{ label: '1 ปี', value: '1 year' },
+		{ label: '1 วัน', value: '1 d' },
+		{ label: '1 เดือน', value: '1 M' },
+		{ label: '3 เดือน', value: '3 M' },
+		{ label: '6 เดือน', value: '6 M' },
+		{ label: '1 ปี', value: '1 y' },
 	],
 });
