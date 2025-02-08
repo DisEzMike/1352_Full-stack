@@ -136,3 +136,14 @@
 .resetbtn:hover {
     background-color: #555;
 }
+
+.topfield, [aria-labelledby="swal2-title"] {
+	z-index: 1500 !important;
+}
+
+.swal2-modal {
+	display: grid;
+	justify-items: center;
+	padding: 20px;
+	gap: 10px;
+}

@@ -47,8 +47,11 @@ import {
 	FileUploadRoot,
 } from '../ui/file-upload';
 import { Controller, Form, useForm } from 'react-hook-form';
-import { object, z } from 'zod';
-import axios from 'axios';
+import { object, unknown, z } from 'zod';
+import axios, { AxiosError } from 'axios';
+
+import Swal from 'sweetalert2'
+import { Route, useNavigate } from 'react-router-dom';
 
 const formSchema = z.object({
 	autoDel: z.string({ message: 'Auto Delete is required' }).array(),
@@ -69,7 +72,9 @@ export default function UploadDialog(text: string, type = 0) {
 		control,
 	} = useForm<FormValues>();
 
-	const onSubmitHandle = handleSubmit((data) => {
+	const navigate = useNavigate();
+
+	const onSubmitHandle = handleSubmit( async (data) => {
 		const formData = new FormData();
 
 		files.map((file, i) => formData.append(`file`, file));
@@ -78,13 +83,45 @@ export default function UploadDialog(text: string, type = 0) {
 
 		formData.append('autoDel', autoDel);
 
-		console.log(Object.fromEntries(formData));
+		// console.log(Object.fromEntries(formData));
 
-		axios({
-			method: "POST",
-			url: "http://localhost:8080/api/upload",
-			data: formData,
-		}).then((res) => console.log(res)).catch(e => console.error)
+		try {
+			const res = await axios({
+				method: "POST",
+				url: "http://localhost:8080/api/upload",
+				data: formData,
+			})
+
+			Swal.fire({
+				target: document.getElementById("dialog::r1::positioner"),
+				title: "Error",
+				icon: "error",
+				text: "อัพโหลดสำเร็จ!",
+				customClass: {
+					container: 'topfield'
+				},
+				showConfirmButton: false,
+				timer: 3000,
+				timerProgressBar: true,
+				didClose: () => {
+					navigate(`/view/${res.data.id}`);
+				}	
+			})
+
+		} catch (e) {
+			Swal.fire({
+				target: document.getElementById("dialog::r1::positioner"),
+				title: `${(e as AxiosError).message}`,
+				icon: "error",
+				text: 'กรุณาลองใหม่อีกครั้ง',
+				customClass: {
+					container: 'topfield'
+				},
+				showConfirmButton: false,
+				timerProgressBar: true,
+				timer: 3000,
+			})
+		}
 	});
 
 	return (
