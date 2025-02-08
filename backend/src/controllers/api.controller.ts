@@ -1,4 +1,4 @@
-import { Request, Response } from "express"
+import { ErrorRequestHandler, Request, Response } from "express"
 import mysql, { ResultSetHeader } from 'mysql2/promise'
 
 import dotenv from 'dotenv';
@@ -6,6 +6,13 @@ dotenv.config();
 
 import shortid from 'shortid';
 import moment from "moment";
+
+const conn = mysql.createConnection({
+    host: process.env.DB_HOSTNAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+})
 
 export const upload = async (req: Request, res: Response) => {
     // files + autoDel
@@ -17,17 +24,12 @@ export const upload = async (req: Request, res: Response) => {
             expried_at = moment(moment().add(parseInt(data[0]), data[1]).format("YYYY-DD-MM"), true).toDate();
         }
 
-        const conn = await mysql.createConnection({
-            host: process.env.DB_HOSTNAME,
-            user: process.env.DB_USERNAME,
-            password: process.env.DB_PASSWORD,
-            database: process.env.DB_NAME
-        })
+        const db = await conn;
 
         let sql = "INSERT INTO `albums` (`albumNo`, `created_at`, `expired_at`) VALUES(?,?,?);";
         let value:any[] = [albumNo, moment().toDate(), expried_at];
 
-        let [result, fields] = await conn.execute(sql, value);
+        let [result, fields] = await db.execute(sql, value);
 
         
         if (req.files) {
@@ -37,13 +39,14 @@ export const upload = async (req: Request, res: Response) => {
                 const dataNo = shortid.generate();
                 sql = "INSERT INTO `datas` (`dataNo`, `name`, `size`, `path`, `albumNo`) VALUES(?,?,?,?,?);";
                 value = [dataNo, file.filename, file.size, file.path, result.insertId];
-                [result, fields] = await conn.execute(sql, value);
+                [result, fields] = await db.execute(sql, value);
             })
         }
 
-
+        db.destroy();
         res.json({id: albumNo});
     } catch (e) {
         console.error(e)
+        res.status(500).json({message: (e as Error).message});
     }
 }
