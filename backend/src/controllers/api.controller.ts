@@ -57,7 +57,7 @@ export const getAlbum = async (req: Request, res: Response) => {
     try {
         const db = await conn;
 
-        let sql = "SELECT dataNo, name, path, size, type, `albums`.albumNo FROM `datas` JOIN `albums` ON `datas`.albumNo=`albums`.id WHERE `albums`.albumNo=?";
+        let sql = "SELECT dataNo, name, path, size, type FROM `datas` JOIN `albums` ON `datas`.albumNo=`albums`.id WHERE `albums`.albumNo=?";
         let value = [albumId]
 
         let [result, fields] = await db.execute(sql, value);
