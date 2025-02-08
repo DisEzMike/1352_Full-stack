@@ -43,7 +43,7 @@ export const upload = async (req: Request, res: Response) => {
             })
         }
 
-        db.destroy();
+        await db.end();
         res.json({id: albumNo});
     } catch (e) {
         console.error(e)
