@@ -7,3 +7,8 @@
 .container {
   width: 90%;
 }
+
+body {
+  background-color: var(--base);
+  z-index: -10;
+}

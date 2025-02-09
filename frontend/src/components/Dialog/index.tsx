@@ -94,8 +94,8 @@ export default function UploadDialog(text: string, type = 0) {
 
 			Swal.fire({
 				target: document.getElementById("dialog::r1::positioner"),
-				title: "Error",
-				icon: "error",
+				title: "Success",
+				icon: "success",
 				text: "อัพโหลดสำเร็จ!",
 				customClass: {
 					container: 'topfield'
