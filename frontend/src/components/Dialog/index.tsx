@@ -52,6 +52,7 @@ import axios, { AxiosError } from 'axios';
 
 import Swal from 'sweetalert2'
 import { Route, useNavigate } from 'react-router-dom';
+import { API_URL } from '../useful';
 
 const formSchema = z.object({
 	autoDel: z.string({ message: 'Auto Delete is required' }).array(),
@@ -88,7 +89,7 @@ export default function UploadDialog(text: string, type = 0) {
 		try {
 			const res = await axios({
 				method: "POST",
-				url: "http://localhost:8080/api/upload",
+				url: `${API_URL.PROB}/api/upload`,
 				data: formData,
 			})
 

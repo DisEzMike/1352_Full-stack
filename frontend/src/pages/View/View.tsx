@@ -18,13 +18,12 @@ import { faDownload, faImage } from "@fortawesome/free-solid-svg-icons"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 
-import {FILE} from "../../components/interface";
+import {API_URL, BASE_URL, FILE} from "../../components/useful";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function View() {
-  const host = "http://localhost";
   const {id} = useParams();
   const [isload, setIsLoad] = useState(false);
   const [data, setData] = useState([] as FILE[]);
@@ -34,12 +33,12 @@ export default function View() {
   useEffect(() => {
     (async () => axios({
       method: "GET",
-      url: `http://localhost:8080/api/${id}`
+      url: `${API_URL.PROB}/api/${id}`
     }).then((result) => {
       setData(result.data.data);
       let temp: {image: string}[] = [];
       result.data.data.forEach((file, i) => {
-        temp[i] = {image: `http://localhost:8080/public/${file.name}`}
+        temp[i] = {image: `${API_URL.PROB}/public/${file.name}`}
       })
       setImg(temp);
   
@@ -100,7 +99,7 @@ export default function View() {
               <div><FontAwesomeIcon icon={faImage} /> &nbsp;{`${currentData?.type.split("/")[1].toLocaleUpperCase()} ${roundByte(currentData!.size)}`}</div>
             </Flex>
             <div>
-              <Button className='resetbtn' variant="subtle" onClick={() => window.open(host+":8080/public/"+currentData?.name, "_blank")}>
+              <Button className='resetbtn' variant="subtle" onClick={() => window.open(API_URL.PROB+"/public/"+currentData?.name, "_blank")}>
                 <FontAwesomeIcon icon={faDownload} />
                 ดาวน์โหลด
               </Button>
@@ -112,7 +111,7 @@ export default function View() {
             <Group className="link-group">
               <div className="link-title">View link</div>
               
-              <ClipboardRoot w="100%" maxW="50vh" value={host+":3000/view/"+id}>
+              <ClipboardRoot w="100%" maxW="50vh" value={BASE_URL.PROB+"/view/"+id}>
                 <InputGroup width="full" endElement={<ClipboardIconButton me="-2" />}>
                   <ClipboardInput />
                 </InputGroup>
@@ -122,7 +121,7 @@ export default function View() {
               return (
               <Group className="link-group" key={value.id}>
                 <div className="link-title">Direct link {i+1}</div>
-                <ClipboardRoot w="100%" maxW="50vh" value={host+":8080/public/"+value.name}>
+                <ClipboardRoot w="100%" maxW="50vh" value={API_URL.PROB+"/public/"+value.name}>
                   <InputGroup width="full" endElement={<ClipboardIconButton me="-2" />}>
                     <ClipboardInput />
                   </InputGroup>

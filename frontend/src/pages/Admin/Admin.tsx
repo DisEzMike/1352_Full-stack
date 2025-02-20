@@ -25,7 +25,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import moment from 'moment';
-import { DATA } from '@/components/interface';
+import { API_URL, BASE_URL, DATA } from '@/components/useful';
 
 Chart.register(CategoryScale);
 
@@ -76,7 +76,7 @@ export default function Admin() {
 		(async () => {
 			axios({
 				method: 'GET',
-				url: `http://localhost:8080/api/data/${moment().toISOString()}`,
+				url: `${API_URL.PROB}/api/data/${moment().toISOString()}`,
 			})
 				.then((result) => {
 					console.log(result.data);
@@ -104,7 +104,7 @@ export default function Admin() {
 
 			axios({
 				method: 'GET',
-				url: `http://localhost:8080/api/data/all`,
+				url: `${API_URL.PROB}/api/data/all`,
 			})
 				.then((result) => {
 					console.log(result.data);
@@ -127,7 +127,7 @@ export default function Admin() {
 	}, []);
 
 	const openLink = (id: string) => {
-		window.open("http://localhost:3000/view/"+id, "_blank")
+		window.open(`${BASE_URL.PROB}/view/${id}`, "_blank")
 	}
 	return (
 		!load && (
