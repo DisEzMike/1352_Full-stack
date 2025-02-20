@@ -17,3 +17,10 @@ cd frontend
 yarn 
 yarn start
 ```
+
+Back-end :
+``` shell
+cd backend
+npm i
+npm run dev
+```
