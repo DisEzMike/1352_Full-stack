@@ -25,4 +25,8 @@
 
 */yarn.lock
 
+<<<<<<< HEAD
 */uploads
+=======
+.DS_Store
+>>>>>>> master
