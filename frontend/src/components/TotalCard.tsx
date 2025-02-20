@@ -38,7 +38,7 @@ export const TotalCard = ({
 						</StatLabel>
 						<Flex>
 							<StatValueText fontSize="lg">
-								{amount}
+								{amount == 0 ? "0" : amount}
 							</StatValueText>
 							{/* <StatHelpText
 								alignSelf="flex-end"
