@@ -1,6 +1,5 @@
 @import '../../assets/variables.css';
 
-
 .carousel .slider-wrapper.axis-horizontal .slider {
     height: 50vh !important;
 }
@@ -56,6 +55,6 @@ hr.thick {
 }
 
 .link-title {
-    width: 100px;
+    width: 130px;
     font-weight: bold;
 }

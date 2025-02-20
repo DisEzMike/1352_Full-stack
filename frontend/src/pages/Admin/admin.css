@@ -1,7 +1,7 @@
-html {
-    background-color: var(--third);
-}
-
-.canvas-container {
+canvas-container {
     height: 60vh;
   }
+
+.chakra-card__root, .table {
+    box-shadow: 0 8px 4.8px 0 rgba(0, 0, 0, 0.1);
+}
